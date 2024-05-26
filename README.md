@@ -9,6 +9,7 @@ Welcome to the GitHub repository for the "Red Blue Purple AI" project! This proj
 - **Red Team Prompts**: Focus on offensive security helper bots.
 - **Blue Team Prompts**: Concentrate on defensive helper bots.
 - **Purple Team Prompts**: Merge both offensive and defensive tactics to provide purple team helper bots.
+- **Silver Team Prompts**: Bots meant to empower leadership, project managers, and other security individuals.
 
 ## Getting Started
 
