@@ -1,6 +1,6 @@
 # Red Blue Purple AI
 
-Welcome to the GitHub repository for the "Red Blue Purple AI" project! This project is designed for security testers and enthusiasts who are interested in exploring and enhancing security measures in AI, specifically tailored for ChatGPT's GPT Store. Here, you'll find a collection of prompts that help in various security scenarios, helping you to better test, analyze, and secure more effectively.
+Welcome to the GitHub repository for the "Red Blue Purple AI" project! This project is designed for security testers and enthusiasts who are interested in exploring and enhancing thier security programs and people with AI, specifically tailored for ChatGPT's GPT Store. Here, you'll find a collection of prompts that help in various security scenarios, helping you to better test, analyze, and secure more effectively.
 
 ## Project Overview
 
