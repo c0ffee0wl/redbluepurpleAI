@@ -1,0 +1,121 @@
+### Custom Semgrep Rules for Identifying Potential Vulnerabilities
+
+As an expert in application security, your task is to create custom Semgrep rules to identify potential vulnerabilities in a codebase. For each rule, provide the following:
+
+1. **Description**: A brief description of the vulnerability or issue the rule is targeting.
+2. **Semgrep Rule**: The Semgrep rule itself, using the appropriate syntax for the target language.
+3. **Explanation**: A brief explanation of how the rule works and what it is looking for.
+4. **Additional Considerations**: Any additional considerations or potential false positives to be aware of (optional).
+
+---
+
+### Scenario 1: Identifying Potential SQL Injection Vulnerabilities in Python Django Applications
+
+**Description**: Detects potential SQL injection vulnerabilities in Django applications by identifying raw SQL queries that use string interpolation or concatenation with user input.
+
+**Semgrep Rule**:
+```yaml
+rules:
+  - id: django-sql-injection
+    patterns:
+      - pattern: cursor.execute("... %!(NOVERB)s ..." %!(NOVERB) ...)
+      - pattern: cursor.execute("... {} ...".format(...))
+      - pattern: cursor.execute(f"...{...}...")
+    message: Potential SQL injection vulnerability. Avoid using string interpolation or concatenation with raw SQL queries.
+    languages: [python]
+    severity: ERROR
+```
+
+**Explanation**: This rule identifies instances where raw SQL queries are constructed using string interpolation or formatting, which can lead to SQL injection if user input is not properly sanitized.
+
+**Additional Considerations**: False positives may occur if user input is safely sanitized before being used in the query. Manual review is recommended.
+
+---
+
+### Scenario 2: Detecting the Use of Insecure Cryptographic Algorithms (e.g., MD5, SHA1) in JavaScript Code
+
+**Description**: Detects the use of insecure cryptographic algorithms like MD5 and SHA1 in JavaScript code.
+
+**Semgrep Rule**:
+```yaml
+rules:
+  - id: insecure-crypto-algorithms
+    patterns:
+      - pattern: crypto.createHash('md5')
+      - pattern: crypto.createHash('sha1')
+    message: Insecure cryptographic algorithm detected. Use stronger algorithms like SHA-256.
+    languages: [javascript]
+    severity: WARNING
+```
+
+**Explanation**: This rule looks for instances where MD5 or SHA1 hashing algorithms are used, which are considered insecure and should be replaced with stronger algorithms like SHA-256.
+
+**Additional Considerations**: Ensure that the context of the usage does not warrant the use of these algorithms for non-security-critical purposes.
+
+---
+
+### Scenario 3: Finding Instances of User-Controlled Input Being Passed to Unsafe Functions in Go, Such as `exec.Command()`
+
+**Description**: Detects instances where user-controlled input is passed to the `exec.Command()` function in Go, which can lead to command injection vulnerabilities.
+
+**Semgrep Rule**:
+```yaml
+rules:
+  - id: go-command-injection
+    pattern: exec.Command($CMD, $ARGS, ...)
+    message: Potential command injection vulnerability. Ensure user input is properly sanitized.
+    languages: [go]
+    severity: ERROR
+```
+
+**Explanation**: This rule identifies calls to `exec.Command()` with user-controlled arguments, which can lead to command injection if not properly sanitized.
+
+**Additional Considerations**: False positives may occur if user input is sanitized or if the command execution context is safe. Manual review is recommended.
+
+---
+
+### Scenario 4: Locating Potential Cross-Site Scripting (XSS) Vulnerabilities in Ruby on Rails Views
+
+**Description**: Detects potential XSS vulnerabilities in Ruby on Rails views by identifying instances where user input is directly rendered without proper escaping.
+
+**Semgrep Rule**:
+```yaml
+rules:
+  - id: rails-xss-vulnerability
+    patterns:
+      - pattern: = $INPUT
+    message: Potential XSS vulnerability. Ensure user input is properly escaped.
+    languages: [ruby]
+    severity: ERROR
+```
+
+**Explanation**: This rule looks for instances where user input is directly rendered in views without using Rails' built-in escaping mechanisms, which can lead to XSS vulnerabilities.
+
+**Additional Considerations**: False positives may occur if input is properly sanitized or escaped. Manual review is recommended.
+
+---
+
+### Scenario 5: Identifying the Use of Hard-Coded Credentials in Java Spring Applications
+
+**Description**: Detects instances of hard-coded credentials in Java Spring applications.
+
+**Semgrep Rule**:
+```yaml
+rules:
+  - id: hardcoded-credentials
+    pattern: $VAR = "..."
+    message: Hard-coded credentials detected. Use secure storage mechanisms for sensitive information.
+    languages: [java]
+    severity: ERROR
+    metadata:
+      references:
+        - https://owasp.org/www-project-top-ten/
+```
+
+**Explanation**: This rule identifies variables that are assigned string literals, which can indicate hard-coded credentials if the variable name suggests it holds sensitive information.
+
+**Additional Considerations**: False positives may occur if the string literals do not contain sensitive information. Manual review and context consideration are recommended.
+
+---
+
+Please follow best practices for writing effective and targeted Semgrep rules.
