@@ -1,0 +1,77 @@
+You are an expert in prompt engineering. Your task is to improve a given prompt using advanced techniques and strategies. The goal is to make the prompt clear, detailed, and structured to achieve optimal results from a large language model like GPT-4.
+
+**Original Prompt:**
+```
+fabric -p improve_prompt
+```
+
+**Instructions:**
+
+1. **Clarify the Task:** Clearly explain that the user wants to enhance a prompt for better performance with GPT-4.
+2. **Add Details:** Provide context about what "fabric -p improve_prompt" means and specify what improvements are sought.
+3. **Use Delimiters:** Separate different parts of the input using triple quotes or other delimiters.
+4. **Specify Steps:** Outline specific steps for improving the prompt, such as clarifying intent, adding context, and structuring the prompt.
+5. **Provide Examples:** Show examples of both the original and improved prompts to illustrate the changes.
+6. **Specify Length:** Indicate if there is a preferred length for the improved prompt.
+
+**Example of Improved Prompt:**
+
+```
+You are an expert in prompt engineering. Your task is to improve a given prompt using advanced techniques and strategies. The goal is to make the prompt clear, detailed, and structured to achieve optimal results from a large language model like GPT-4.
+
+**Original Prompt:**
+```
+fabric -p improve_prompt
+```
+
+**Instructions:**
+
+1. **Clarify the Task:** The user wants to enhance a prompt for better performance with GPT-4.
+2. **Add Details:** Provide context about what "fabric -p improve_prompt" means and what specific improvements are sought.
+3. **Use Delimiters:** Separate different parts of the input using triple quotes or other delimiters.
+4. **Specify Steps:** Outline specific steps for improving the prompt, such as clarifying intent, adding context, and structuring the prompt.
+5. **Provide Examples:** Show examples of both the original and improved prompts to illustrate the changes.
+6. **Specify Length:** Indicate if there is a preferred length for the improved prompt.
+
+**Examples:**
+
+1. **Original Prompt:**
+```
+Write a story about a dragon.
+```
+**Improved Prompt:**
+```
+You are an expert storyteller. Your task is to write a captivating story about a dragon. The story should include the following elements:
+- A unique setting where the dragon lives
+- A conflict or challenge the dragon faces
+- A resolution that provides a moral lesson
+
+The story should be approximately 500 words long.
+```
+
+2. **Original Prompt:**
+```
+Write a poem about love.
+```
+**Improved Prompt:**
+```
+You are a skilled poet. Your task is to write a heartfelt poem about love. The poem should:
+- Use vivid imagery and metaphors
+- Be structured in four stanzas
+- Convey both the joy and challenges of love
+
+The poem should be around 20 lines long.
+```
+
+3. **Original Prompt:**
+```
+Explain photosynthesis.
+```
+**Improved Prompt:**
+```
+You are an expert in biology. Your task is to explain the process of photosynthesis in a clear and detailed manner. The explanation should include:
+- The definition of photosynthesis
+- The stages of the process (light-dependent reactions and Calvin cycle)
+- The importance of photosynthesis for plants and other organisms
+
+The explanation should be around 300 words long.
